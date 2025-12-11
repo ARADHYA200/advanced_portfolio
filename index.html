@@ -1,0 +1,84 @@
+<!--
+ADVANCED PORTFOLIO WEBSITE
+This document contains SEPARATE FILES for:
+1. index.html
+2. about.html
+3. skills.html
+4. projects.html
+5. contact.html
+6. style.css
+7. script.js
+
+⚡ This version is redesigned to be MUCH more attractive:
+✔ Modern Neon + Glassmorphism theme
+✔ Smooth animations
+✔ Fully responsive layout
+✔ Better spacing + no empty dead space
+✔ High‑quality layout with visuals & gradient sections
+✔ Images included (royalty free placeholders)
+
+Copy each file into your project folder exactly as named.
+Place all HTML files in root folder.
+Place style.css and script.js also in root (or create /assets folder if you want).
+Place images inside /assets/img folder.
+-->
+
+============================================================
+======================== index.html ========================
+============================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aradhya | Web Developer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Aradhya</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h3>Hello, I'm</h3>
+            <h1>Aradhya Agarwal</h1>
+            <h2 class="typing"></h2>
+            <p>Web Developer crafting stunning, interactive and powerful digital experiences.</p>
+            <a href="projects.html" class="btn">Explore My Work</a>
+        </div>
+        <div class="hero-img">
+            <div class="image-wrapper">
+                <img src="assets/img/profile.jpg" alt="Profile Photo">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Highlight Section -->
+    <section class="highlight">
+        <div class="highlight-box">
+            <h3>6+ Months Experience</h3>
+            <p>Frontend & Backend Development</p>
+        </div>
+        <div class="highlight-box">
+            <h3>10+ Projects</h3>
+            <p>Web Apps | UI | React</p>
+        </div>
+        <div class="highlight-box">
+            <h3>Tech Stack</h3>
+            <p>HTML • CSS • JS • React • Node.js</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #040014, #0a0146, #1b0066);
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 6%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #0a002b;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #00eaff;
+}
+
+/* MENU BUTTON (mobile) */
+.menu-btn {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Toggle class for mobile */
+nav.show {
+    display: flex !important;
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+#hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 140px 6% 60px;
+    min-height: 90vh;
+    gap: 40px;
+}
+#hero {
+    overflow-x: hidden;
+}
+
+
+/* LEFT TEXT */
+.hero-left h3 {
+    font-size: 22px;
+    opacity: 0.8;
+}
+
+.hero-left h1 {
+    font-size: 55px;
+    font-weight: 800;
+    line-height: 1.1;
+    text-shadow: 0 0 20px #00eaff;
+}
+
+.hero-left p {
+    font-size: 17px;
+    max-width: 450px;
+    margin-top: 18px;
+    opacity: 0.9;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #00eaff;
+    color: #000;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: white;
+}
+
+/* RIGHT IMAGE */
+/* =========================================================
+   HERO IMAGE (GLOWING CIRCLE)
+========================================================= */
+
+.hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Outer neon glowing circle */
+.image-wrapper {
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+
+    /* Neon glow */
+    box-shadow:
+        0 0 20px #00eaff,
+        0 0 40px #00eaff,
+        0 0 70px #00eaff;
+}
+
+/* Perfect circular crop */
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* keeps face centered */
+    border-radius: 50%;
+}
+
+/* Glowing ambient aura outside the circle */
+.image-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: -25px;
+    background: radial-gradient(circle, #00eaff55, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* Mobile size */
+@media (max-width: 900px) {
+    .image-wrapper {
+        width: 230px;
+        height: 230px;
+        box-shadow:
+            0 0 12px #00eaff,
+            0 0 25px #00eaff;
+    }
+
+    .image-wrapper::before {
+        inset: -12px;
+    }
+}
+
+
+/* =========================================================
+   HIGHLIGHT BOXES
+========================================================= */
+.highlight {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 6%;
+}
+
+.highlight-box {
+    background: rgba(255,255,255,0.1);
+    padding: 20px 25px;
+    text-align: center;
+    border-radius: 15px;
+    flex: 1;
+    min-width: 250px;
+}
+
+/* =========================================================
+   SKILLS GRID
+========================================================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 60px 6%;
+}
+
+.skill-card {
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 20px #008cff;
+}
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 100px 6%;
+}
+
+.project-card {
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 0 15px #00eaff;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+.contact-form {
+    padding: 100px 6%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 14px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+}
+
+/* =========================================================
+   RESPONSIVE (MOBILE)
+========================================================= */
+
+@media (max-width: 900px) {
+
+    /* HEADER */
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background: #0a002b;
+        right: 6%;
+        top: 70px;
+        padding: 15px;
+        border-radius: 10px;
+        width: 180px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    /* HERO */
+    #hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 120px;
+    }
+
+    .hero-left h1 {
+        font-size: 40px;
+    }
+
+    .hero-left p {
+        max-width: 100%;
+    }
+
+    .image-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* HIGHLIGHT BOXES */
+    .highlight {
+        flex-direction: column;
+    }
+
+    /* SKILLS GRID */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* PROJECTS */
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================================================
+   ABOUT PAGE - MODERN DESIGN
+========================================================= */
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 140px 6% 80px;
+    gap: 50px;
+}
+
+/* Glowing circular about image */
+.about-img-wrapper {
+    width: 350px;
+    height: 350px;
+    border-radius: 25px;   /* Rounded square */
+    overflow: hidden;
+    position: relative;
+
+    /* Neon glow border */
+    box-shadow:
+        0 0 12px #00eaff,
+        0 0 30px #00eaff,
+        0 0 55px #00eaff;
+}
+
+.about-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Keeps proportions correct */
+    border-radius: 25px;
+}
+
+.about-img-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: -25px;
+    border-radius: 25px;
+    background: radial-gradient(circle, #00eaff55, transparent 70%);
+    z-index: -1;
+}
+
+/* Right Text Section */
+.about-right {
+    max-width: 550px;
+}
+
+.about-title {
+    font-size: 40px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 0 20px #00eaff;
+}
+
+.about-text {
+    font-size: 17px;
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Glassmorphism card */
+.about-card {
+    background: rgba(255,255,255,0.07);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 25px #008cff;
+}
+
+.about-card h3 {
+    margin-bottom: 10px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 900px) {
+    .about-img-wrapper {
+        width: 250px;
+        height: 250px;
+        border-radius: 20px;
+    }
+
+    .about-img-wrapper img {
+        border-radius: 20px;
+    }
+
+    .about-img-wrapper::before {
+        inset: -15px;
+        border-radius: 20px;
+    }
+}
